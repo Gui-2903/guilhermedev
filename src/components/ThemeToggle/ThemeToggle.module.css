@@ -1,0 +1,23 @@
+.wrapper {
+  padding:6px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.03);
+  background: transparent;
+  cursor: pointer;
+}
+.icon { font-size:16px; }
+
+
+/* ============================
+   RESPONSIVIDADE - THEME TOGGLE
+============================ */
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 4px 6px;
+  }
+
+  .icon {
+    font-size: 14px;
+  }
+}

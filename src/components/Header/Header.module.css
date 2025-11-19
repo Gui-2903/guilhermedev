@@ -1,0 +1,133 @@
+.hero {
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  justify-content:space-between;
+  padding: 36px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+}
+
+.left {
+  flex: 1 1 60%;
+}
+.right {
+  flex: 0 0 320px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+}
+
+/* Title with accent for typing text */
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(26px, 6.4vw, 44px);
+  margin: 0 0 10px 0;
+  line-height: 1.02;
+  color: var(--text);
+}
+.type {
+  display:inline-block;
+  position:relative;
+}
+.type::after {
+  content: "";
+  width: 2px;
+  height: 1.05em;
+  background: var(--accent);
+  display:inline-block;
+  margin-left:8px;
+  animation: blink 1s steps(2, start) infinite;
+  vertical-align:middle;
+}
+@keyframes blink { to { opacity: 0 } }
+
+.subtitle {
+  margin: 8px 0 18px;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* CTA buttons row */
+.ctaRow {
+  display:flex;
+  gap:12px;
+  margin-bottom: 18px;
+}
+.cta {
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:8px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform .12s ease, background .12s ease;
+}
+.cta.primary {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.cta:hover { transform: translateY(-3px); }
+
+/* right card */
+.card {
+  width: 320px;
+  padding:16px;
+  background: var(--surface);
+  border-radius: 10px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+.snippetTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight:700;
+  font-size:14px;
+  margin-bottom:10px;
+}
+.tags { display:flex; flex-wrap:wrap; gap:8px; }
+.tag {
+  padding:6px 8px;
+  border-radius:8px;
+  background: rgba(255,255,255,0.02);
+  color:var(--muted);
+  font-size:13px;
+}
+
+
+/* ============================
+   RESPONSIVIDADE - HEADER
+============================ */
+
+@media (max-width: 850px) {
+  .hero {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .right {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 8vw; /* ajusta dinamicamente */
+  }
+}
+
+@media (max-width: 500px) {
+  .ctaRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta {
+    width: 100%;
+    text-align: center;
+  }
+}

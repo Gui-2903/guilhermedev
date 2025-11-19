@@ -1,0 +1,222 @@
+/* Global.module.css
+   - define variáveis de tema
+   - importa fontes
+   - regras globais
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  /* cores para dark (preto-no-branco) */
+  --bg: #0b0b0b;          /* fundo principal (preto) */
+  --surface: #111111;     /* cards, superfície */
+  --text: #e9e9e9;        /* texto */
+  --muted: #bdbdbd;       /* texto secundário */
+  --accent: #00b4ff;      /* tom de acento (azul vibrante) */
+  --glass: rgba(255,255,255,0.03);
+}
+
+[data-theme="light"] {
+  --bg: #f6f6f6;          /* fundo claro */
+  --surface: #ffffff;     /* cards */
+  --text: #0b0b0b;        /* texto escuro */
+  --muted: #4a4a4a;
+  --accent: #00b4ff;      /* mantemos o mesmo acento */
+  --glass: rgba(0,0,0,0.04);
+}
+
+/* Reset + global */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html { scroll-behavior: smooth; } /* smooth scroll */
+body {
+  margin: 0;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+/* exported class names (used by components) */
+.app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top nav */
+.topNav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 28px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+.navLinks {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.navLinks a {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: color .2s, background .2s, transform .12s;
+}
+.navLinks a:hover {
+  color: var(--text);
+  background: var(--glass);
+  transform: translateY(-2px);
+}
+
+/* Main content area */
+.main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* Footer */
+.footer {
+  padding: 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+
+/* Small util classes that components can use */
+.sectionTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(20px, 3.4vw, 28px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.lead {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* Scroll reveal helper (classes added via JS) */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Buttons */
+.btn {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color:var(--text);
+  text-decoration:none;
+  cursor:pointer;
+  font-weight:500;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn.primary {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.btn.accent {
+  border: none;
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 60%, black 20%));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Utility grid for projects */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* small tag */
+.tag {
+  display:inline-block;
+  padding:6px 8px;
+  border-radius:6px;
+  font-size:13px;
+  background: rgba(255,255,255,0.03);
+  color:var(--muted);
+  border:1px solid rgba(255,255,255,0.02);
+}
+
+/* tiny helpers */
+.row { display:flex; gap:12px; align-items:center; }
+.space-between { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+
+
+/* ============================
+   RESPONSIVIDADE GLOBAL
+============================ */
+
+/* Layout principal */
+@media (max-width: 900px) {
+  .main {
+    padding: 0 16px 60px;
+    gap: 60px;
+  }
+}
+
+/* NAVBAR mobile */
+@media (max-width: 700px) {
+  .topNav {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .navLinks {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .navLinks a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+}
+
+/* Rodapé */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,92 @@
+.container {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.title {
+  font-family:"Montserrat", sans-serif;
+  font-size:22px;
+  margin:0;
+}
+.lead { color:var(--muted); margin-bottom:8px; }
+
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap:14px;
+}
+.card {
+  padding:14px;
+  border-radius:10px;
+  background:var(--surface);
+  border:1px solid rgba(255,255,255,0.02);
+  transition: transform .18s cubic-bezier(.2,.9,.3,1), box-shadow .18s;
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(12px);
+}
+.card.visible {
+  opacity:1;
+  transform: translateY(0);
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.45);
+}
+.cardHead { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:8px; }
+.tag { background: rgba(255,255,255,0.02); padding:6px 8px; border-radius:6px; color:var(--muted); font-size:12px; margin-left:6px; }
+.desc { color:var(--muted); margin-bottom:12px; }
+.actions { display:flex; gap:8px; }
+.btn {
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:8px;
+  color:var(--text);
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.03);
+  transition: transform .12s ease;
+}
+.btn:hover { transform: translateY(-3px); }
+.primary {
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 70%, black 20%));
+  color:white;
+  border: none;
+}
+
+
+/* ============================
+   RESPONSIVIDADE - PROJECTS
+============================ */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 14px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+

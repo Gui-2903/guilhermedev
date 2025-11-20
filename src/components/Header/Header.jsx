@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import { useTyping } from "../utils/hooks";
 
 export default function Header() {
-  const typed = useTyping("EEu sou Guilherme, Desenvolvedor", 60);
+  const typed = useTyping("EEu sou Guilherme, Desenvolvedor", 130);
 
   return (
     <header className={styles.hero}>

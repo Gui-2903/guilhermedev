@@ -1,13 +1,17 @@
-.hero {
-  display:flex;
-  gap:28px;
-  align-items:flex-start;
-  justify-content:space-between;
-  padding: 36px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.03);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.45);
+
+.hero{
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 36px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    /* NOVAS PROPRIEDADES PARA CONTROLAR A LARGURA E CENTRALIZAR */
+    max-width: 1130px; /* Altere este valor para a largura máxima desejada */
+    margin: 50px auto; /* Centraliza o bloco na horizontal */
 }
 
 .left {
@@ -100,12 +104,17 @@
    RESPONSIVIDADE - HEADER
 ============================ */
 
-@media (max-width: 850px) {
+
+  @media (max-width: 850px) {
   .hero {
     flex-direction: column;
     padding: 24px;
+    /* Centraliza e limita o container principal */
+    width: 90%;   
+    margin: 20px auto; 
+    box-sizing: border-box; 
   }
-
+   
   .right {
     justify-content: center;
     width: 100%;
@@ -119,6 +128,7 @@
     font-size: 8vw; /* ajusta dinamicamente */
   }
 }
+
 
 @media (max-width: 500px) {
   .ctaRow {

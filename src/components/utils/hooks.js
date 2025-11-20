@@ -10,10 +10,14 @@ export function useTyping(text = "", speed = 80) {
     idx.current = 0;
     let raf;
     function tick() {
-      if (idx.current < text.length) {
-        setValue((v) => v + text[idx.current]);
+     if (text && idx.current < text.length) {
+        setValue(v => v + text[idx.current]);
+        console.log("VALUE ->",idx.current );
+        if(idx.current != 30){
+          raf = setTimeout(tick, speed);
+        }
         idx.current += 1;
-        raf = setTimeout(tick, speed);
+       
       } else {
         // opcional: manter cursor piscando (feito via CSS)
       }
@@ -21,6 +25,5 @@ export function useTyping(text = "", speed = 80) {
     tick();
     return () => clearTimeout(raf);
   }, [text, speed]);
-
   return value;
 }

@@ -31,7 +31,7 @@ export default function About() {
       <div className={styles.grid}>
         <div className={styles.card}>
           <h3>Formação</h3>
-          <p>Estudante de Sistemas de Informação — Universidade (nome), foco em backend, APIs e arquiteturas modernas.</p>
+          <p>Estudante de Sistemas de Informação — Universidade (UEMG), foco em backend, APIs e arquiteturas modernas.</p>
         </div>
 
         <div className={styles.card}>
@@ -42,7 +42,7 @@ export default function About() {
             <span className={styles.tag}>Node.js</span>
             <span className={styles.tag}>SQL / Postgres</span>
             <span className={styles.tag}>Docker</span>
-            <span className={styles.tag}>Testes (Jest)</span>
+            <span className={styles.tag}>Banco de Dados</span>
           </div>
         </div>
       </div>

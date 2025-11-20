@@ -7,8 +7,8 @@ const PROJECTS = [
     title: "Painel Administrativo",
     desc: "Dashboard para controle de usuários, logs e métricas.",
     tech: ["React", "Node.js", "Postgres", "Docker"],
-    github: "https://github.com/username/painel",
-    demo: ""
+    github: "https://github.com/Gui-2903/Full-stack-Sptyf",
+    demo: "22"
   },
   {
     id: 2,

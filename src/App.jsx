@@ -21,7 +21,7 @@ export default function App() {
   return (
     <div className={styles.app}>
       <nav className={styles.topNav}>
-        <div className={styles.logo}>Meu Portfólio</div>
+        <div className={styles.logo}>Guilherme.Dev  </div>
         <div className={styles.navLinks}>
           <a href="#about">Sobre</a>
           <a href="#projects">Projetos</a>

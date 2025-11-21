@@ -29,7 +29,7 @@ export default function Contact() {
         <div className={styles.links}>
           <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/guilherme-fs29?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="mailto:guilhermefs2903@gmail.com">guilhermefs2903@gmail.com</a>
+          <a href="guilhermefs2903@gmail.com">guilhermefs2903@gmail.com</a>
         </div>
 
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>

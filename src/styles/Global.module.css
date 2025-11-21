@@ -49,6 +49,7 @@ body {
 
 /* Top nav */
 .topNav {
+  height: 20vh;
   position: sticky;
   top: 0;
   z-index: 60;
@@ -64,6 +65,8 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   letter-spacing: 0.6px;
+ 
+  
 }
 .navLinks {
   display: flex;
@@ -187,6 +190,7 @@ body {
 /* NAVBAR mobile */
 @media (max-width: 700px) {
   .topNav {
+    height: 15vh;
     padding: 14px 16px;
     flex-direction: column;
     align-items: flex-start;
@@ -203,6 +207,10 @@ body {
   .navLinks a {
     font-size: 14px;
     padding: 6px 8px;
+  }
+  .logo{
+    position: relative;
+    top: 25px;
   }
 }
 

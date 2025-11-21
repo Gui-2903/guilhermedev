@@ -6,7 +6,7 @@ const PROJECTS = [
     id: 1,
     title: "Painel Administrativo",
     desc: "Dashboard para controle de usuários, logs e métricas.",
-    tech: ["React", "Node.js", "Postgres", "Docker"],
+    tech: ["React", "Node.js", "Postgres"],
     github: "https://github.com/Gui-2903/Full-stack-Sptyf",
     demo: "22"
   },
@@ -16,7 +16,7 @@ const PROJECTS = [
     desc: "API de autenticação e gerenciamento de recursos com JWT.",
     tech: ["Node.js", "Express", "JWT"],
     github: "https://github.com/username/api-rest",
-    demo: ""
+    demo: "6"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const PROJECTS = [
 
 export default function Projects() {
   useEffect(() => {
-    const els = document.querySelectorAll(`.${styles.card}`);
+    const els = document.querySelectorAll(`.reveal`);
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -53,7 +53,7 @@ export default function Projects() {
 
       <div className={styles.grid}>
         {PROJECTS.map((p) => (
-          <article key={p.id} className={styles.card}>
+          <article key={p.id} className={`${styles.card} reveal`}>
             <div className={styles.cardHead}>
               <h3>{p.title}</h3>
               <div className={styles.tags}>

@@ -16,9 +16,13 @@
 
 .left {
   flex: 1 1 60%;
+  display:flex;
+  flex-direction: column;
+  gap: 20px;
+
 }
 .right {
-  flex: 0 0 320px;
+  flex: 0 0 200px;
   display:flex;
   align-items:flex-start;
   justify-content:flex-end;
@@ -68,10 +72,12 @@
   color: var(--text);
   border: 1px solid rgba(255,255,255,0.04);
   transition: transform .12s ease, background .12s ease;
+  background: linear-gradient(225deg, rgb(12 121 171 / 24%), rgb(35 54 237 / 5%));
+  border: 1px solid rgb(0 0 0 / 14%);
 }
 .cta.primary {
-  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(225deg, rgb(12 121 171 / 24%), rgb(35 54 237 / 5%));
+  border: 1px solid rgb(0 0 0 / 14%);
 }
 .cta:hover { transform: translateY(-3px); }
 
@@ -139,5 +145,7 @@
   .cta {
     width: 100%;
     text-align: center;
+    background: linear-gradient(225deg, rgb(12 121 171 / 24%), rgb(35 54 237 / 5%));
+    border: 1px solid rgb(0 0 0 / 14%);
   }
 }

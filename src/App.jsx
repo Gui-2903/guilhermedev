@@ -7,10 +7,14 @@ import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import styles from "./styles/Global.module.css";
 
 export default function App() {
+  
   const [theme, setTheme] = useState(() => {
-    // prefer system? default to dark-theme (preto-no-branco)
-    return localStorage.getItem("theme") || "dark";
+    const savedTheme = localStorage.getItem("theme");
+    // CORRIGIDO: Usa o tema salvo no localStorage, ou "dark" como padrão.
+    // O operador vírgula foi removido.
+    return savedTheme ?? "dark"; 
   });
+  console.log("1THEME IN APP OUTSIDE ->", theme);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -26,7 +30,9 @@ export default function App() {
           <a href="#about">Sobre</a>
           <a href="#projects">Projetos</a>
           <a href="#contact">Contato</a>
+          {console.log("2THEME IN APP OUTSIDE ->", theme)}
           <ThemeToggle theme={theme} setTheme={setTheme} />
+          {console.log("3THEME IN APP OUTSIDE ->", theme)}
         </div>
       </nav>
 

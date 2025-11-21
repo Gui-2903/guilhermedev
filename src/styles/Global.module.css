@@ -16,6 +16,7 @@
   --glass: rgba(255,255,255,0.03);
 }
 
+
 [data-theme="light"] {
   --bg: #f6f6f6;          /* fundo claro */
   --surface: #ffffff;     /* cards */

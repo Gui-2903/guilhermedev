@@ -7,7 +7,7 @@ export default function ThemeToggle({ theme, setTheme }) {
   return (
     <button className={styles.wrapper} onClick={toggle} aria-label="Toggle theme">
       <div className={styles.icon} data-theme={theme === "dark" ? "dark" : "light"}>
-        {theme === "dark" ? "🌙" : "☀️"}
+        {theme === "dark" ?  "☀️":"🌙" }
       </div>
     </button>
   );

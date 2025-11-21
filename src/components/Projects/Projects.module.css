@@ -58,6 +58,149 @@
   border: none;
 }
 
+/* ============================
+   MODAL - PROJECTS
+============================ */
+
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* Fundo escuro/semitransparente */
+  backdrop-filter: blur(4px);
+  z-index: 100; /* Garante que fique acima de tudo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background: var(--surface); /* Usa a cor de superfície para consistência */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 650px; /* Largura máxima para centralizar e não ficar muito grande */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  max-height: 90vh;
+  overflow-y: auto; /* Scroll dentro do modal se o conteúdo for grande */
+  transform: scale(0.95);
+  animation: modalEnter 0.3s cubic-bezier(.2,.9,.3,1) forwards;
+}
+
+@keyframes modalEnter {
+  to { transform: scale(1); }
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.modalTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  margin: 0;
+}
+
+.modalCloseBtn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 30px;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.1s ease;
+}
+.modalCloseBtn:hover {
+  color: var(--text);
+}
+
+.modalTags {
+  margin-bottom: 16px;
+}
+
+.modalFullDesc {
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modalImageLink {
+    /* Centraliza a imagem no meio do modal */
+    display: block; 
+    text-align: center;
+    margin: 20px 0; /* Espaçamento acima e abaixo do bloco da imagem */
+}
+
+.modalImage {
+    width: 65vh;
+
+    object-fit: cover;
+    border-radius: 37px;
+    border: 1px solid var(--cor-borda, #ddd);
+
+}
+
+.modalImageLink:hover {
+}
+
+/* Substitua o texto pelo elemento de imagem (você usará uma tag <img> no React) */
+/* Aqui é apenas para o exemplo visual */
+.modalImageLink > [class^="Image of"] {
+    width: 100%;
+    height: auto;
+    background-color: var(--surface);
+    display: block;
+    min-height: 200px;
+    text-align: center;
+    line-height: 200px;
+    color: var(--muted);
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end; /* Alinha os botões à direita */
+}
+
+
+/* ============================
+   RESPONSIVIDADE - MODAL
+============================ */
+@media (max-width: 600px) {
+    .modalContent {
+        padding: 20px;
+    }
+    .modalTitle {
+        font-size: 22px;
+    }
+    .modalActions {
+        flex-direction: column;
+    }
+    .modalActions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .modalImage {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 37px;
+    border: 1px solid var(--cor-borda, #ddd);
+
+}
+}
+
+
+
+
+
 
 /* ============================
    RESPONSIVIDADE - PROJECTS

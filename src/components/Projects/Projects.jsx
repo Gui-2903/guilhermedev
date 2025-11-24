@@ -3,7 +3,9 @@ import styles from "./Projects.module.css";
 import ProjectModal from "./ProjectModal"; // Novo componente
 
 
-import painelAdminImg from "../../img/Captura de tela 2025-11-21 173431.png";
+import painelformLoc from "../../img/Captura de tela 2025-11-21 173431.png";
+import painelAdminImg from  "../../img/Captura de tela 2025-11-24 170239.png";
+import aviaoSimulador from "../../img/Captura de tela 2025-11-24 170600.png";
 
 
 const PROJECTS = [
@@ -12,31 +14,31 @@ const PROJECTS = [
     title: "FORM-LOCALIZACAO",
     desc: "Formulario de Resposta para gerenciamento Eventos",
     tech: ["React", "Node.js", "Redis"],
-    github: "https://github.com/Gui-2903/Full-stack-Sptyf",
+    github: "https://github.com/Gui-2903/formLocRedis",
     demo: "https://form-loc.vercel.app/",
-    imgUrl: painelAdminImg, // Adicionado imgUrl
-    fullDesc: "Um formulario que só é permitido responder, caso esteja no determinado local onde esta acontecendo o evento", // Adicionado fullDesc
+    imgUrl: painelformLoc, // Adicionado imgUrl
+    fullDesc: "Este sistema digital de Geo-Check-in utiliza a localização do seu dispositivo para validar sua presença física no evento. Apenas após a confirmação de que você está dentro do raio permitido (Geofence), o formulário de resposta será liberado. É obrigatório habilitar o GPS para registrar sua participação e garantir a autenticidade dos dados.", // Adicionado fullDesc
   },
   {
-    id: 2,
-    title: "FORM-LOCALIZACAO, painel Admin",
+   id: 2,
+    title: "Painel ADM - FORM-LOCALIZACAO",
     desc: "Formulario de Resposta para gerenciamento Eventos",
     tech: ["React", "Node.js", "Redis"],
-    github: "https://github.com/Gui-2903/Full-stack-Sptyf",
+    github: "https://github.com/Gui-2903/formLocRedis",
     demo: "https://form-loc.vercel.app/adm",
     imgUrl: painelAdminImg, // Adicionado imgUrl
-    fullDesc: "Um formulario que só é permitido responder, caso esteja no determinado local onde esta acontecendo o evento usuario e senha :admin", // Adicionado fullDesc
+    fullDesc: "A Área ADM é o painel de controle restrito, acessível com as credenciais 'admin' em usuario e senha, dedicado à gestão do evento. Aqui o administrador define o local exato (Lat/Long), o raio de validação (Geofence) e personaliza as perguntas do formulário. A seção permite ainda a visualização e exportação de relatórios de presença confirmada.", // Adicionado fullDesc
   },
   
   {
     id: 3,
-    title: "Projeto de Visualização",
+    title: "Aviao Simulador",
     desc: "Visualizações interativas de dados com gráficos dinâmicos.",
-    tech: ["React", "Recharts", "D3"],
-    github: "https://github.com/username/visualizacao",
-    demo: "https://demo.example.com",
-    imgUrl: "https://via.placeholder.com/600x400?text=Imagem+Visualizacao", // Adicionado imgUrl
-    fullDesc: "Criação de um projeto frontend para visualização de dados complexos através de gráficos interativos e dinâmicos, utilizando as bibliotecas Recharts e D3.js para alta personalização.", // Adicionado fullDesc
+    tech: ["HTML", "JavaScript", "3D"],
+    github: "https://github.com/Gui-2903/aviao-simulador",
+    demo: "https://gui-2903.github.io/aviao-simulador/",
+    imgUrl: aviaoSimulador, // Adicionado imgUrl
+    fullDesc: "Simulador de Avião (Nome da Linguagem/Framework). Focado na implementação da lógica de movimento 3D, controles básicos da aeronave (pitch, roll, yaw) e física simplificada. Ideal para estudar a programação de ambientes interativos.", // Adicionado fullDesc
   }
 ];
 

@@ -140,14 +140,20 @@
 
 .modalImage {
     width: 65vh;
-
     object-fit: cover;
     border-radius: 37px;
-    border: 1px solid var(--cor-borda, #ddd);
-
+    border: 13px solid #2b282880;
+    /* A transição está aqui e será aplicada quando qualquer propriedade mudar */
+    transition: transform 0.1s ease-in-out; /* Mudei para 0.3s para ser mais rápido */
 }
 
-.modalImageLink:hover {
+/* Aplique o hover DIRETAMENTE no elemento que tem a transição */
+.modalImage:hover {
+    transform: translateY(-6px) scale(1.009);
+}
+/* Se modalImageLink for o pai, use: */
+.modalImageLink:hover .modalImage {
+    transform: translateY(-6px) scale(1.009);
 }
 
 /* Substitua o texto pelo elemento de imagem (você usará uma tag <img> no React) */
@@ -192,7 +198,7 @@
     height: 220px;
     object-fit: cover;
     border-radius: 37px;
-    border: 1px solid var(--cor-borda, #ddd);
+    border: 13px solid #2b282880;
 
 }
 }

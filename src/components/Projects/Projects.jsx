@@ -23,7 +23,7 @@ const PROJECTS = [
   {
    id: 2,
     title: "Painel ADM - FORM-LOCALIZACAO",
-    desc: "Formulario de Resposta para gerenciamento Eventos",
+    desc: "Painel de Controle para gerenciamento Eventos do FORM-LOCALIZACAO",
     tech: ["React", "Node.js", "Redis"],
     github: "https://github.com/Gui-2903/formLocRedis",
     demo: "https://form-loc.vercel.app/adm",
@@ -34,7 +34,7 @@ const PROJECTS = [
   {
     id: 3,
     title: "Aviao Simulador",
-    desc: "Simulador de Avião com controles básicos e física simplificada.",
+    desc: "Jogo de simulador de Avião com controles básicos e física simplificada.",
     tech: ["HTML", "JavaScript", "3D"],
     github: "https://github.com/Gui-2903/aviao-simulador",
     demo: "https://gui-2903.github.io/aviao-simulador/",

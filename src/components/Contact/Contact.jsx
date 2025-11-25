@@ -29,28 +29,64 @@ export default function Contact() {
         <div className={styles.links}>
           <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/guilherme-fs29?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="guilhermefs2903@gmail.com">guilhermefs2903@gmail.com</a>
+          <a href="">guilhermefs2903@gmail.com</a>
         </div>
 
-        <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-          <label>
-            Nome
-            <input placeholder="Seu nome" />
-          </label>
-          <label>
-            Email
-            <input placeholder="seu.email@exemplo.com" />
-          </label>
-          <label>
-            Mensagem
-            <textarea placeholder="Escreva aqui..." rows="6" />
-          </label>
+        <form
+            className={styles.form}
+            action="https://formsubmit.co/guilhermefs2903@gmail.com"
+            method="POST"
+          >
 
-          <div className={styles.formActions}>
-            <button className={styles.btn} type="submit">Enviar (visual)</button>
-            <button className={`${styles.btn} ${styles.ghost}`} type="button">Limpar</button>
-          </div>
-        </form>
+            {/* desativa captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+
+            {/* envia email no formato tabela */}
+            <input type="hidden" name="_template" value="table" />
+
+            {/* redireciona após envio (opcional) */}
+            <input type="hidden" name="_next" value="https://guilhermedev-three.vercel.app/" />
+
+            <label>
+              Nome
+              <input
+                name="name"
+                placeholder="Seu nome"
+                required
+              />
+            </label>
+
+            <label>
+              Email
+              <input
+                name="email"
+                type="email"
+                placeholder="seu.email@exemplo.com"
+                required
+              />
+            </label>
+
+            <label>
+              Mensagem
+              <textarea
+                name="message"
+                placeholder="Escreva aqui..."
+                rows="6"
+                required
+              />
+            </label>
+
+            <div className={styles.formActions}>
+              <button className={styles.btn} type="submit">Enviar</button>
+
+              <button
+                className={`${styles.btn} ${styles.ghost}`}
+                type="reset"
+              >
+                Limpar
+              </button>
+            </div>
+          </form>
       </div>
     </div>
   );

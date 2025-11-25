@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Contact.module.css";
 
 export default function Contact() {
@@ -20,6 +20,17 @@ export default function Contact() {
     return () => obs.disconnect();
   }, []);
 
+
+  const [copied, setCopied] = useState(false);
+
+const copyEmail = () => {
+  navigator.clipboard.writeText("guilhermefs2903@gmail.com");
+  setCopied(true);
+
+  // esconde após 2s
+  setTimeout(() => setCopied(false), 2000);
+};
+
   return (
     <div className={`reveal ${styles.container}`} ref={ref}>
       <h2 className={styles.title}>Contato</h2>
@@ -29,13 +40,22 @@ export default function Contact() {
         <div className={styles.links}>
           <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://www.linkedin.com/in/guilherme-fs29?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="">guilhermefs2903@gmail.com</a>
+         <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            copyEmail();
+          }}
+        >
+              guilhermefs2903@gmail.com
+          </a>
         </div>
-
+        {copied && <div className={styles.toast}>Email copiado!</div>}
         <form
             className={styles.form}
             action="https://formsubmit.co/guilhermefs2903@gmail.com"
             method="POST"
+            
           >
 
             {/* desativa captcha */}
@@ -89,5 +109,6 @@ export default function Contact() {
           </form>
       </div>
     </div>
+    
   );
 }

@@ -53,9 +53,9 @@ export default function App() {
       </main>
 
       <footer className={styles.footer}>
-        <div>© {new Date().getFullYear()} — Seu Nome. Desenvolvedor Full Stack.</div>
-        <div>
-          <a href="https://github.com/username" target="_blank" rel="noreferrer">GitHub</a>
+        <div>© {new Date().getFullYear()} — Guilherme. Desenvolvedor .</div>
+        <div className="btn">
+          <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </footer>
     </div>

@@ -6,6 +6,7 @@ import ProjectModal from "./ProjectModal"; // Novo componente
 import painelformLoc from "../../img/Captura de tela 2025-11-21 173431.png";
 import painelAdminImg from  "../../img/Captura de tela 2025-11-24 170239.png";
 import aviaoSimulador from "../../img/Captura de tela 2025-11-24 170600.png";
+import geradorcert from "../../img/Captura de tela 2025-11-25 150835.png";
 
 
 const PROJECTS = [
@@ -33,12 +34,22 @@ const PROJECTS = [
   {
     id: 3,
     title: "Aviao Simulador",
-    desc: "Visualizações interativas de dados com gráficos dinâmicos.",
+    desc: "Simulador de Avião com controles básicos e física simplificada.",
     tech: ["HTML", "JavaScript", "3D"],
     github: "https://github.com/Gui-2903/aviao-simulador",
     demo: "https://gui-2903.github.io/aviao-simulador/",
     imgUrl: aviaoSimulador, // Adicionado imgUrl
     fullDesc: "Simulador de Avião (Nome da Linguagem/Framework). Focado na implementação da lógica de movimento 3D, controles básicos da aeronave (pitch, roll, yaw) e física simplificada. Ideal para estudar a programação de ambientes interativos.", // Adicionado fullDesc
+  },
+  {
+    id: 4,
+    title: "Gerador de Certificados - ONLINE",
+    desc: "GERADOR DE CERTIFICADOS ONLINE",
+    tech: ["HTML", "JavaScript", "React"],
+    github: "https://github.com/Gui-2903/MailMerge",
+    demo: "https://github.com/Gui-2903/MailMerge",
+    imgUrl: geradorcert, // Adicionado imgUrl
+    fullDesc: "Este é um projeto que implementa a funcionalidade de mala direta (Mail Merge), permitindo a leitura de dados de uma planilha (como um arquivo CSV ou Excel) e sua subsequente substituição em um documento de texto base. O objetivo é gerar múltiplos documentos personalizados de forma eficiente, Observação: O projeto ainda não está totalmente funcional, pois está em processo de finalização e novas funcionalidades estão sendo adicionadas.", // Adicionado fullDesc
   }
 ];
 

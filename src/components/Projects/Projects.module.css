@@ -48,7 +48,7 @@
   border-radius:8px;
   color:var(--text);
   background:transparent;
-  border:1px solid rgba(255,255,255,0.03);
+  border: 2px solid rgb(0 187 255 / 48%);
   transition: transform .12s ease;
 }
 .btn:hover { transform: translateY(-3px); }
@@ -81,13 +81,13 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 30px;
-  width: 90%;
-  max-width: 650px; /* Largura máxima para centralizar e não ficar muito grande */
+  width: auto;
+  max-width: 63%; /* Largura máxima para centralizar e não ficar muito grande */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  max-height: 90vh;
+  max-height: 94vh;
   overflow-y: auto; /* Scroll dentro do modal se o conteúdo for grande */
   transform: scale(0.95);
-  animation: modalEnter 0.3s cubic-bezier(.2,.9,.3,1) forwards;
+  animation: modalEnter 1.3s cubic-bezier(.2,.9,.3,1) forwards;
 }
 
 @keyframes modalEnter {
@@ -179,15 +179,17 @@
 /* ============================
    RESPONSIVIDADE - MODAL
 ============================ */
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
     .modalContent {
         padding: 20px;
+        max-width: 73%;
     }
     .modalTitle {
         font-size: 22px;
     }
     .modalActions {
         flex-direction: column;
+        align-items: center;
     }
     .modalActions .btn {
         width: 100%;
@@ -200,7 +202,11 @@
     border-radius: 37px;
     border: 13px solid #2b282880;
 
-}
+    }
+  .btn {
+      max-width:50%;
+      text-align: center;
+    }
 }
 
 
@@ -219,10 +225,15 @@
   }
 }
 
+
 @media (max-width: 600px) {
   .card {
     padding: 14px;
   }
+  .modalContent {
+        padding: 20px;
+        max-width: 90%;
+    }
 
   .title {
     font-size: 20px;
@@ -241,4 +252,3 @@
     text-align: center;
   }
 }
-

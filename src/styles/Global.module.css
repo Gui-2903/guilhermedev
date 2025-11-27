@@ -98,6 +98,10 @@ body {
   gap: 80px;
 }
 
+.contact{
+  display: flex;
+  justify-content: center;
+}
 /* Footer */
 .footer {
   padding: 28px;
@@ -105,7 +109,7 @@ body {
   justify-content:space-between;
   align-items:center;
   color:var(--muted);
-  border-top:1px solid rgba(255,255,255,0.03);
+  border-top:3px solid rgba(42, 192, 219, 0.596);
 }
 
 /* Small util classes that components can use */
@@ -157,6 +161,33 @@ body {
   color: #fff;
   background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 60%, black 20%));
   box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.gitImg {
+  /* Tamanho fixo é mais confiável com Flexbox para centralização */
+  width: 40px; 
+  height: 40px;
+  cursor: pointer;
+}
+
+.btnGit {
+  /* Mantenha inline-flex se quiser que ele ocupe apenas o espaço necessário */
+  display: inline-flex;
+  /* Estas duas linhas fazem a centralização: */
+  align-items: center; 
+  justify-content: center; 
+  
+  /* ... o resto do seu CSS ... */
+  padding: 10px;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.gitLink {
+  /* Não precisa de alteração se a imagem tiver tamanho fixo */
+  width: auto;
 }
 
 /* Utility grid for projects */

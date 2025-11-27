@@ -5,7 +5,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import styles from "./styles/Global.module.css";
-
+import github from "./img/github.png";
 export default function App() {
   
   const [theme, setTheme] = useState(() => {
@@ -47,15 +47,17 @@ export default function App() {
           <Projects />
         </section>
 
-        <section id="contact">
+        <section id="contact" className={styles.contact}>
           <Contact />
         </section>
       </main>
 
       <footer className={styles.footer}>
         <div>© {new Date().getFullYear()} — Guilherme. Desenvolvedor .</div>
-        <div className="btn">
-          <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer">GitHub</a>
+        <div className={styles.btnGit}>
+          <a href="https://github.com/Gui-2903" target="_blank" rel="noreferrer" className={styles.gitLink}>
+            <img src={github} alt="githubft" className={styles.gitImg} />
+          </a>
         </div>
       </footer>
     </div>
